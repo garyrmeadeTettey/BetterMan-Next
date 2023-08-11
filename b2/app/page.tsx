@@ -8,6 +8,10 @@ import Logout from '@/components/button1'
 import { redirect } from 'next/dist/server/api-utils'
 import Dashboard from './dashboard/page'
 import Access from '@/components/button2'
+import Blog from '@/components/blog'
+import Hero from '@/components/hero'
+import Body from '@/components/body'
+import Footer from '@/components/footer'
 
 export const dynamic = 'force-dynamic'
 
@@ -62,12 +66,13 @@ export default async function Index() {
           <div>
             {session ? (
               <div className="flex items-center gap-4">
-                Hey, {user?.email}!
+                Welcome, {user?.email}!
                 <LogoutButton />
                 <Link
                 href="/register"
                 className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
               >
+                
                 <Access />
               </Link>
               </div>
@@ -78,6 +83,7 @@ export default async function Index() {
               >
                 Not Logged In
               </Link>
+              
             )}
           </div>
           <div>
@@ -88,7 +94,7 @@ export default async function Index() {
                 href="/register"
                 className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
               >
-                Register
+                Sign Up Page
               </Link>
           </div>
         </div>
@@ -123,8 +129,8 @@ export default async function Index() {
 
             <div>
             {session ? (
-              <div className="flex items-center gap-4">
-                Hey, !
+              <div className="">
+                Hey, {user?.email}! You are Logged In!
                 <LogoutButton />
                 <Link
                 href="/register"
@@ -132,6 +138,20 @@ export default async function Index() {
               >
                 <Access />
               </Link>
+              <div className='pt-10'>
+              <Hero />
+              </div>
+
+              <div className="pt-10 mt-10">
+              <Body />
+              </div>
+
+              <div>
+              <Footer />  
+              </div>
+
+
+              
               </div>
             ) : (
               <Link
@@ -143,7 +163,7 @@ export default async function Index() {
             )}
           </div>
           </div>
-          <div className="w-full justify-center border rounded-lg overflow-hidden">
+          {/* <div className="w-full justify-center border rounded-lg overflow-hidden">
             {examples.map(({ type, src }) => (
               <div
                 key={type}
@@ -157,7 +177,7 @@ export default async function Index() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div className="flex justify-center text-center text-xs">
