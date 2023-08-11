@@ -12,6 +12,8 @@ import Blog from '@/components/blog'
 import Hero from '@/components/hero'
 import Body from '@/components/body'
 import Footer from '@/components/footer'
+import Courses from './courses/page'
+import CoursesButton from '@/components/coursesbtn'
 
 export const dynamic = 'force-dynamic'
 
@@ -138,12 +140,16 @@ export default async function Index() {
               >
                 <Access />
               </Link>
-              <div className='pt-10'>
+              
               <Hero />
-              </div>
+              
 
               <div className="pt-10 mt-10">
               <Body />
+              </div>
+
+              <div>
+                <CoursesButton />
               </div>
 
               <div>
